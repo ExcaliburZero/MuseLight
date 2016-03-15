@@ -105,7 +105,7 @@ public class LightController {
     }
 
     public void toggleBlue() {
-        if (redState) {
+        if (blueState) {
             turnOffBlue();
         } else {
             turnOnBlue();
