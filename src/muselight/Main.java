@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 Shakhar Dasgupta<sdasgupt@oswego.edu>
+ * Copyright (C) 2016 Christopher Wells <cwellsny@nycap.rr.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,13 +17,28 @@
  */
 package muselight;
 
+import musegestures.MuseGestureServer;
+import musegestures.MuseGestures;
+
 /**
  *
  * @author Shakhar Dasgupta<sdasgupt@oswego.edu>
+ * @author Christopher Wells <cwellsny@nycap.rr.com>
  */
-public class Main {
+public class Main implements MuseGestures {
+
+    private LightController lightController;
 
     public static void main(String[] args) {
-        new MuseOscServer(5000);
+        lightController = new LightController();
+        new MuseGestureServer(this, 5000);
+    }
+
+    public void onBlink() {
+        lightController.toggleGreen();
+    }
+
+    public void onJawClench() {
+        lightController.toggleBlue();
     }
 }
