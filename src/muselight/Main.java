@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 Shakhar Dasgupta<sdasgupt@oswego.edu>
+ * Copyright (C) 2016 Christoper Wells <cwellsny@nycap.rr.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,10 +20,11 @@ package muselight;
 /**
  *
  * @author Shakhar Dasgupta<sdasgupt@oswego.edu>
+ * @author Christopher Wells {@literal <cwellsny@nycap.rr.com>}
  */
 public class Main {
 
     public static void main(String[] args) {
-        new MuseOscServer(5000);
+        LightGestureHandler handler = new LightGestureHandler();
     }
 }
